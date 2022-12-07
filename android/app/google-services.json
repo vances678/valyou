@@ -1,0 +1,46 @@
+{
+  "project_info": {
+    "project_number": "723822954010",
+    "project_id": "valyou-25961",
+    "storage_bucket": "valyou-25961.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:723822954010:android:8110f84991be949be233a3",
+        "android_client_info": {
+          "package_name": "com.example.valyou"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "723822954010-s6rdf9sr2rg6ctrq8gjo6ber6mbbrtjp.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDkbLXr5O9ScSEXQu8PfSshuI8ZmBlEV3U"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "723822954010-s6rdf9sr2rg6ctrq8gjo6ber6mbbrtjp.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "723822954010-qgalo6qp04rmmk0avd6ka6oeqipjrv7i.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.example.valyou"
+              }
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
