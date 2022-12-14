@@ -1,3 +1,9 @@
+/* 
+
+Author: Vance Spears
+Date: 2022/12/13
+*/
+
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
@@ -11,14 +17,18 @@ import 'package:valyou/widgets/cards/stat_cards/stat_card.dart';
 import 'package:valyou/widgets/cards/value_cards/dotted_border_card.dart';
 import 'package:valyou/widgets/cards/value_cards/value_card.dart';
 
+///
 class DashboardPage extends StatefulWidget {
+  ///
   const DashboardPage({super.key});
 
   @override
   State<DashboardPage> createState() => _DashboardPageState();
 }
 
+///
 class _DashboardPageState extends State<DashboardPage> {
+  ///
   final DataRepository repository = DataRepository();
 
   @override
@@ -83,6 +93,7 @@ class _DashboardPageState extends State<DashboardPage> {
     );
   }
 
+  ///
   Widget _buildValueCards(
       BuildContext context, List<DocumentSnapshot>? snapshot) {
     return Column(
@@ -92,6 +103,7 @@ class _DashboardPageState extends State<DashboardPage> {
     );
   }
 
+  ///
   Widget _buildValueCard(BuildContext context, DocumentSnapshot snapshot) {
     final value = Value.fromSnapshot(snapshot);
 

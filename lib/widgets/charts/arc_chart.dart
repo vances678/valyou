@@ -1,14 +1,28 @@
+/* 
+
+Author: Vance Spears
+Date: 2022/12/13
+*/
+
 import 'dart:math';
 import 'package:flutter/material.dart';
 import 'package:valyou/data/defaults.dart';
 
+///
 double currentValue = 80;
+
+///
 double maxValue = 100;
 
+///
 class ArcChart extends CustomPainter {
+  ///
   final Color startColor;
+
+  ///
   final Color endColor;
 
+  ///
   ArcChart({required this.startColor, required this.endColor});
 
   @override

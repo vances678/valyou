@@ -1,21 +1,32 @@
+/* 
+A control for selecting ratings
+Author: Vance Spears
+Date: 2022/12/13
+*/
+
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'package:rainbow_color/rainbow_color.dart';
 import 'package:valyou/data/defaults.dart';
 import 'package:valyou/widgets/cards/custom_card.dart';
 
+/// A control for selecting ratings
 class RatingSelector extends StatefulWidget {
   const RatingSelector({super.key, required this.maxRating, this.onSelect});
 
+  /// The maximum numeric value of a rating
   final int maxRating;
+
+  /// A function that is run on selection of a rating
   final Function(int)? onSelect;
 
   @override
   State<RatingSelector> createState() => _RatingSelectorState();
 }
 
+/// The state for the rating selector
 class _RatingSelectorState extends State<RatingSelector>
     with TickerProviderStateMixin {
+  /// The selected rating
   int selectedRating = 0;
 
   @override
@@ -72,9 +83,11 @@ class _RatingSelectorState extends State<RatingSelector>
   }
 }
 
+/// A custom painter that draws a "wave"-like selection rectangle
 class WavePainter extends CustomPainter {
   WavePainter({required this.waveWidthRatio});
 
+  /// The ratio of the control to be selected
   final double waveWidthRatio;
 
   @override

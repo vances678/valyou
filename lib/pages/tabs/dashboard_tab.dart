@@ -1,17 +1,24 @@
+/* 
+
+Author: Vance Spears
+Date: 2022/12/13
+*/
+
 import 'package:flutter/material.dart';
 import 'package:valyou/data/value.dart';
 import 'package:valyou/pages/dashboard_page.dart';
 import 'package:valyou/pages/details_page.dart';
 
+///
 class DashboardTab extends StatefulWidget {
+  ///
   const DashboardTab({super.key});
 
   @override
   State<DashboardTab> createState() => _DashboardTabState();
 }
 
-final GlobalKey<NavigatorState> dashboardNavigatorKey = GlobalKey();
-
+///
 class _DashboardTabState extends State<DashboardTab>
     with AutomaticKeepAliveClientMixin<DashboardTab> {
   @override

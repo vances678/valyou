@@ -1,7 +1,15 @@
+/* 
+
+Author: Vance Spears
+Date: 2022/12/13
+*/
+
 import 'package:flutter/material.dart';
 import 'package:valyou/data/defaults.dart';
 
+///
 class CustomCard extends StatelessWidget {
+  ///
   const CustomCard({
     super.key,
     required this.child,
@@ -14,14 +22,28 @@ class CustomCard extends StatelessWidget {
     this.backgroundColor,
   });
 
+  ///
   final Widget child;
 
+  ///
   final double? height;
+
+  ///
   final EdgeInsets? padding;
+
+  ///
   final EdgeInsets? margin;
+
+  ///
   final BorderRadius? borderRadius;
+
+  ///
   final Border? border;
+
+  ///
   final BoxShadow? shadow;
+
+  ///
   final Color? backgroundColor;
 
   @override

@@ -1,9 +1,17 @@
+/* 
+
+Author: Vance Spears
+Date: 2022/12/13
+*/
+
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:valyou/widgets/cards/custom_card.dart';
 import 'package:valyou/data/defaults.dart';
 
+///
 class StatCard extends StatelessWidget {
+  ///
   const StatCard({super.key});
 
   @override

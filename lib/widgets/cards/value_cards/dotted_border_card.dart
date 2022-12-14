@@ -1,17 +1,28 @@
+/* 
+
+Author: Vance Spears
+Date: 2022/12/13
+*/
+
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:valyou/data/defaults.dart';
 import 'package:valyou/widgets/cards/custom_card.dart';
 import 'package:dotted_border/dotted_border.dart';
 
+///
 class DottedBorderCard extends StatelessWidget {
+  ///
   const DottedBorderCard({
     super.key,
     this.height = 64,
     this.text = "",
   });
 
+  ///
   final double height;
+
+  ///
   final String text;
 
   @override

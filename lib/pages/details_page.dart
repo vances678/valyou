@@ -1,22 +1,33 @@
-import 'package:fl_chart/fl_chart.dart';
+/* 
+
+Author: Vance Spears
+Date: 2022/12/13
+*/
+
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:valyou/data/defaults.dart';
-import 'package:valyou/data/helper_functions.dart';
+import 'package:valyou/data/date_globals.dart';
 import 'package:valyou/data/repository/data_repository.dart';
 import 'package:valyou/data/value.dart';
 import 'package:valyou/widgets/cards/custom_card.dart';
+import 'package:valyou/widgets/cards/stat_cards/chart_card.dart';
 
+///
 class DetailsPage extends StatefulWidget {
+  ///
   const DetailsPage({super.key, required this.value});
 
+  ///
   final Value value;
 
   @override
   State<DetailsPage> createState() => _DetailsPageState();
 }
 
+///
 class _DetailsPageState extends State<DetailsPage> {
+  ///
   final DataRepository repository = DataRepository();
 
   @override
@@ -50,91 +61,7 @@ class _DetailsPageState extends State<DetailsPage> {
           crossAxisAlignment: CrossAxisAlignment.stretch,
           children: [
             SizedBox(height: Defaults.padding.bottom),
-            CustomCard(
-              child: Column(
-                mainAxisSize: MainAxisSize.min,
-                children: [
-                  Text(
-                    "${formattedDate(mostRecentWeekday(DateTime.now(), 1))} - ${formattedDate(mostRecentWeekday(DateTime.now(), 1).add(const Duration(days: 6)))}",
-                    style: GoogleFonts.poppins(
-                      fontWeight: FontWeight.w600,
-                      fontSize: 18,
-                    ),
-                  ),
-                  SizedBox(height: Defaults.padding.bottom),
-                  AspectRatio(
-                    aspectRatio: 1 / 1,
-                    child: BarChart(
-                      BarChartData(
-                        borderData: FlBorderData(
-                          border: Border(
-                            left: BorderSide(
-                              width: 2,
-                              color: Theme.of(context).iconTheme.color!,
-                            ),
-                            bottom: BorderSide(
-                              width: 2,
-                              color: Theme.of(context).iconTheme.color!,
-                            ),
-                          ),
-                        ),
-                        gridData: FlGridData(
-                          drawVerticalLine: false,
-                          drawHorizontalLine: false,
-                        ),
-                        maxY: 5,
-                        barGroups: [
-                          for (var i = 0; i < 7; i++)
-                            BarChartGroupData(
-                              x: i,
-                              barRods: [
-                                (i < widget.value.alignmentData.values.length)
-                                    ? BarChartRodData(
-                                        toY: widget.value.alignmentData.values
-                                            .elementAt(i)
-                                            .toDouble(),
-                                        width: 16,
-                                        color: Defaults.spectrum[widget
-                                                .value.alignmentData.values
-                                                .elementAt(i) /
-                                            5],
-                                      )
-                                    : BarChartRodData(
-                                        toY: 0,
-                                        width: 16,
-                                      ),
-                              ],
-                            ),
-                        ],
-                        titlesData: FlTitlesData(
-                          bottomTitles: AxisTitles(
-                            sideTitles: SideTitles(
-                              showTitles: true,
-                              getTitlesWidget: getBottomTitles,
-                              reservedSize: 28,
-                            ),
-                          ),
-                          leftTitles: AxisTitles(
-                            sideTitles: SideTitles(
-                              showTitles: true,
-                              getTitlesWidget: getLeftTitles,
-                              interval: 1,
-                              reservedSize: 22,
-                            ),
-                          ),
-                          topTitles: AxisTitles(
-                            sideTitles: SideTitles(showTitles: false),
-                          ),
-                          rightTitles: AxisTitles(
-                            sideTitles: SideTitles(showTitles: false),
-                          ),
-                        ),
-                      ),
-                    ),
-                  ),
-                ],
-              ),
-            ),
+            ChartCard(value: widget.value),
             for (var i = 0; i < 7; i++)
               if (i < widget.value.alignmentData.values.length)
                 CustomCard(
@@ -215,32 +142,4 @@ class _DetailsPageState extends State<DetailsPage> {
       ),
     );
   }
-}
-
-Widget getLeftTitles(double value, TitleMeta meta) {
-  return SideTitleWidget(
-    axisSide: meta.axisSide,
-    space: Defaults.increment,
-    child: Text(
-      "${value.toInt()}",
-      style: GoogleFonts.poppins(
-        fontWeight: FontWeight.w700,
-        fontSize: 20,
-      ),
-    ),
-  );
-}
-
-Widget getBottomTitles(double value, TitleMeta meta) {
-  return SideTitleWidget(
-    axisSide: meta.axisSide,
-    space: 0,
-    child: Text(
-      days[value.toInt()].substring(0, 1),
-      style: GoogleFonts.poppins(
-        fontWeight: FontWeight.w700,
-        fontSize: 20,
-      ),
-    ),
-  );
 }

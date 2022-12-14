@@ -1,3 +1,9 @@
+/* 
+The bottom navigation bar (customized!)
+Author: Vance Spears
+Date: 2022/12/13
+*/
+
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
@@ -5,6 +11,7 @@ import 'package:valyou/data/defaults.dart';
 import 'package:valyou/pages/checkin_page.dart';
 import 'package:valyou/widgets/controls/buttons/primary_button.dart';
 
+/// The customized bottom navigation bar
 class CustomBottomNavBar extends StatelessWidget {
   const CustomBottomNavBar({
     super.key,
@@ -12,7 +19,10 @@ class CustomBottomNavBar extends StatelessWidget {
     required this.onTap,
   });
 
+  /// The currently selected bottom navigation bar index
   final int currentIndex;
+
+  /// A function that is run when a tab is selected in the bottom navigation bar
   final void Function(int)? onTap;
 
   @override

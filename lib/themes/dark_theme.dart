@@ -1,7 +1,14 @@
+/* 
+
+Author: Vance Spears
+Date: 2022/12/13
+*/
+
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:valyou/data/defaults.dart';
 
+///
 ThemeData darkTheme(BuildContext context) {
   return ThemeData.dark().copyWith(
     brightness: Brightness.dark,

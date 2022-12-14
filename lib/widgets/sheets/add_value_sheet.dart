@@ -1,4 +1,8 @@
-// ignore_for_file: prefer_const_constructors
+/* 
+A popup sheet for adding new values
+Author: Vance Spears
+Date: 2022/12/13
+*/
 
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
@@ -9,6 +13,7 @@ import 'package:valyou/data/value_template.dart';
 import 'package:valyou/widgets/controls/buttons/primary_button.dart';
 import 'package:valyou/widgets/controls/selectors/color_selector.dart';
 
+/// A popup sheet for adding new values
 class AddValueSheet extends StatefulWidget {
   const AddValueSheet({super.key});
 
@@ -16,15 +21,24 @@ class AddValueSheet extends StatefulWidget {
   State<AddValueSheet> createState() => _AddValueSheetState();
 }
 
+/// The state for AddValueSheet, the popup sheet for adding new values
 class _AddValueSheetState extends State<AddValueSheet> {
+  /// An instance of the Firestore data repository
   final DataRepository repository = DataRepository();
 
+  /// The controller that manages entry of the new value's name
   final textController = TextEditingController();
 
+  /// A list of default value icons
   final List<IconData> icons = Defaults.icons.values.toList();
+
+  /// A list of default value colors
   final List<List<Color>> colors = Defaults.colors.valueColors;
 
+  /// The index of the selected icon
   int _selectedIconIndex = 0;
+
+  /// The index of the selected color
   int _selectedColorIndex = 0;
 
   @override
@@ -65,7 +79,7 @@ class _AddValueSheetState extends State<AddValueSheet> {
             ],
           ),
           Divider(color: Defaults.colors.detail),
-          SizedBox(height: 8),
+          const SizedBox(height: 8),
           Row(
             mainAxisAlignment: MainAxisAlignment.start,
             children: [
@@ -74,7 +88,7 @@ class _AddValueSheetState extends State<AddValueSheet> {
                 style: GoogleFonts.poppins(
                     fontSize: 14, fontWeight: FontWeight.w500),
               ),
-              SizedBox(width: 8),
+              const SizedBox(width: 8),
               Expanded(
                 child: SizedBox(
                   height: 30,
@@ -85,9 +99,9 @@ class _AddValueSheetState extends State<AddValueSheet> {
               ),
             ],
           ),
-          SizedBox(height: 8),
+          const SizedBox(height: 8),
           Divider(color: Defaults.colors.detail),
-          SizedBox(height: 8),
+          const SizedBox(height: 8),
           Row(
             mainAxisAlignment: MainAxisAlignment.start,
             children: [
@@ -96,15 +110,15 @@ class _AddValueSheetState extends State<AddValueSheet> {
                 style: GoogleFonts.poppins(
                     fontSize: 14, fontWeight: FontWeight.w500),
               ),
-              SizedBox(width: 8),
+              const SizedBox(width: 8),
               Expanded(
                 child: colorSelector,
               )
             ],
           ),
-          SizedBox(height: 8),
+          const SizedBox(height: 8),
           Divider(color: Defaults.colors.detail),
-          SizedBox(height: 8),
+          const SizedBox(height: 8),
           Row(
             children: [
               Text(
@@ -112,7 +126,7 @@ class _AddValueSheetState extends State<AddValueSheet> {
                 style: GoogleFonts.poppins(
                     fontSize: 14, fontWeight: FontWeight.w500),
               ),
-              SizedBox(width: 8),
+              const SizedBox(width: 8),
               Expanded(
                 child: DropdownButton(
                   isExpanded: true,
@@ -133,7 +147,7 @@ class _AddValueSheetState extends State<AddValueSheet> {
               ),
             ],
           ),
-          SizedBox(height: 24),
+          const SizedBox(height: 24),
           PrimaryButton(
             width: 200,
             onPressed: () {
@@ -165,7 +179,7 @@ class _AddValueSheetState extends State<AddValueSheet> {
               ),
             ),
           ),
-          SizedBox(height: 40)
+          const SizedBox(height: 40)
         ],
       ),
     );

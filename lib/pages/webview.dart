@@ -1,14 +1,26 @@
+/* 
+
+Author: Vance Spears
+Date: 2022/12/13
+*/
+
 import 'dart:async';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:webview_flutter/webview_flutter.dart';
 
+///
 class WebViewPage extends StatelessWidget {
+  ///
   WebViewPage({super.key, required this.title, required this.url});
 
+  ///
   final String title;
+
+  ///
   final String url;
 
+  ///
   final Completer<WebViewController> _controller =
       Completer<WebViewController>();
 

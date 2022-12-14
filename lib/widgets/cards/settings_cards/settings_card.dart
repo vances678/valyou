@@ -1,3 +1,9 @@
+/* 
+
+Author: Vance Spears
+Date: 2022/12/13
+*/
+
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:valyou/data/defaults.dart';
@@ -5,20 +11,26 @@ import 'package:valyou/data/setting.dart';
 import 'package:valyou/main.dart';
 import 'package:valyou/widgets/cards/custom_card.dart';
 
+///
 class SettingsCard extends StatefulWidget {
+  ///
   const SettingsCard({
     super.key,
     required this.title,
     required this.settings,
   });
 
+  ///
   final String title;
+
+  ///
   final List<Setting> settings;
 
   @override
   State<SettingsCard> createState() => _SettingsCardState();
 }
 
+///
 class _SettingsCardState extends State<SettingsCard> {
   @override
   Widget build(BuildContext context) {

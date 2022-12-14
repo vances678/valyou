@@ -1,3 +1,9 @@
+/* 
+
+Author: Vance Spears
+Date: 2022/12/13
+*/
+
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:valyou/data/defaults.dart';
@@ -7,7 +13,9 @@ import 'package:valyou/widgets/controls/buttons/primary_button.dart';
 import 'package:valyou/widgets/controls/buttons/secondary_button.dart';
 import 'package:valyou/widgets/controls/selectors/rating_selector.dart';
 
+///
 class CheckinSlide extends StatefulWidget {
+  ///
   const CheckinSlide({
     super.key,
     required this.pageController,
@@ -18,17 +26,29 @@ class CheckinSlide extends StatefulWidget {
     required this.isLastSlide,
   });
 
+  ///
   final PageController pageController;
+
+  ///
   final Function(Map<String, int>) onRatingChange;
+
+  ///
   final Map<String, int> ratings;
+
+  ///
   final Value value;
+
+  ///
   final bool isFirstSlide;
+
+  ///
   final bool isLastSlide;
 
   @override
   State<CheckinSlide> createState() => _CheckinSlideState();
 }
 
+///
 class _CheckinSlideState extends State<CheckinSlide>
     with AutomaticKeepAliveClientMixin {
   @override

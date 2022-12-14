@@ -1,3 +1,9 @@
+/* 
+
+Author: Vance Spears
+Date: 2022/12/13
+*/
+
 import 'package:app_settings/app_settings.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
@@ -7,13 +13,16 @@ import 'package:valyou/pages/webview.dart';
 import 'package:valyou/widgets/cards/settings_cards/account_card.dart';
 import 'package:valyou/widgets/cards/settings_cards/settings_card.dart';
 
+///
 class ProfilePage extends StatefulWidget {
+  ///
   const ProfilePage({super.key});
 
   @override
   State<ProfilePage> createState() => _ProfilePageState();
 }
 
+///
 class _ProfilePageState extends State<ProfilePage> {
   @override
   Widget build(BuildContext context) {

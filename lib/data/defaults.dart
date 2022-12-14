@@ -1,17 +1,35 @@
+/* 
+
+Author: Vance Spears
+Date: 2022/12/13
+*/
+
 import 'package:flutter/material.dart';
 import 'package:rainbow_color/rainbow_color.dart';
 
+///
 class Defaults {
+  ///
   static const double increment = 8;
+
+  ///
   static const EdgeInsets padding = EdgeInsets.all(increment * 2);
+
+  ///
   static const EdgeInsets margin = EdgeInsets.only(
     left: increment * 2,
     right: increment * 2,
     bottom: increment * (3 / 2),
     top: increment / 2,
   );
+
+  ///
   static const Border border = Border();
+
+  ///
   static BorderRadius borderRadius = BorderRadius.circular(increment);
+
+  ///
   static BoxShadow shadow = BoxShadow(
     blurRadius: increment,
     offset: const Offset(0, increment),
@@ -19,6 +37,7 @@ class Defaults {
     color: colors.detailDark.withAlpha(20),
   );
 
+  ///
   static Rainbow spectrum = Rainbow(
     spectrum: [
       Colors.red[900]!,
@@ -30,6 +49,7 @@ class Defaults {
     ],
   );
 
+  ///
   static const Map<String, IconData> icons = {
     "favorite": Icons.favorite,
     "house": Icons.house_rounded,
@@ -43,8 +63,8 @@ class Defaults {
     "question": Icons.question_mark_rounded,
   };
 
-  // ignore: library_private_types_in_public_api
-  static const _Colors colors = _Colors(
+  ///
+  static const DefaultColors colors = DefaultColors(
     accent: Color(0xff2788f7),
     accentLight: Color(0xff00b7fb),
     accentDark: Color(0xff0659f9),
@@ -96,8 +116,9 @@ class Defaults {
   );
 }
 
-class _Colors {
-  const _Colors({
+///
+class DefaultColors {
+  const DefaultColors({
     required this.accent,
     required this.accentLight,
     required this.accentDark,

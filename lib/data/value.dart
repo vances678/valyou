@@ -1,15 +1,32 @@
+/* 
+
+Author: Vance Spears
+Date: 2022/12/13
+*/
+
 import 'package:flutter/material.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:valyou/data/defaults.dart';
 import 'package:valyou/data/value_template.dart';
 
+///
 class Value {
+  ///
   final String name;
+
+  ///
   final IconData icon;
+
+  ///
   final List<Color> colors;
+
+  ///
   Map<DateTime, int> alignmentData;
+
+  ///
   String? referenceID;
 
+  ///
   Value({
     required this.name,
     required this.icon,
@@ -18,15 +35,18 @@ class Value {
     this.referenceID,
   });
 
+  ///
   factory Value.fromSnapshot(DocumentSnapshot snapshot) {
     final value = Value.fromJson(snapshot.data() as Map<String, dynamic>);
     value.referenceID = snapshot.reference.id;
     return value;
   }
 
+  ///
   factory Value.fromTemplate(ValueTemplate valueTemplate) =>
       Value.fromJson(valueTemplate.toJson());
 
+  ///
   factory Value.fromJson(Map<String, dynamic> json) {
     List<Color> colors = [];
     Map<String, dynamic> map = json["colors"];
@@ -40,6 +60,7 @@ class Value {
     );
   }
 
+  ///
   Map<String, dynamic> toJson() {
     Map<String, dynamic> colorMap = {};
     colors.asMap().forEach((key, value) {

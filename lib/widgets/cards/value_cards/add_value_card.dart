@@ -1,17 +1,31 @@
+/* 
+
+Author: Vance Spears
+Date: 2022/12/13
+*/
+
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:valyou/data/defaults.dart';
 import 'package:valyou/widgets/cards/custom_card.dart';
 
+///
 class AddValueCard extends StatelessWidget {
+  ///
   const AddValueCard({
     super.key,
     required this.title,
     required this.icon,
     required this.colors,
   });
+
+  ///
   final String title;
+
+  ///
   final IconData icon;
+
+  ///
   final List<Color> colors;
 
   @override

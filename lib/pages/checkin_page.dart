@@ -1,3 +1,9 @@
+/* 
+
+Author: Vance Spears
+Date: 2022/12/13
+*/
+
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
 import 'package:valyou/data/defaults.dart';
@@ -5,17 +11,27 @@ import 'package:valyou/data/repository/data_repository.dart';
 import 'package:valyou/data/value.dart';
 import 'checkin_slide.dart';
 
+///
 class CheckinPage extends StatefulWidget {
+  ///
   const CheckinPage({super.key});
 
   @override
   State<CheckinPage> createState() => _CheckinPageState();
 }
 
+///
 class _CheckinPageState extends State<CheckinPage> {
+  ///
   double? pageProgress;
+
+  ///
   PageController pageController = PageController();
+
+  ///
   int? totalPageNum;
+
+  ///
   Map<String, int> ratings = {};
 
   @override

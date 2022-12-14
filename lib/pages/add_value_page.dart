@@ -1,3 +1,9 @@
+/* 
+
+Author: Vance Spears
+Date: 2022/12/13
+*/
+
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
 import 'package:valyou/data/defaults.dart';
@@ -8,14 +14,18 @@ import 'package:valyou/widgets/sheets/add_value_sheet.dart';
 import 'package:valyou/widgets/cards/value_cards/add_value_card.dart';
 import 'package:valyou/widgets/cards/value_cards/dotted_border_card.dart';
 
+///
 class AddValuePage extends StatefulWidget {
+  ///
   const AddValuePage({super.key});
 
   @override
   State<AddValuePage> createState() => _AddValuePageState();
 }
 
+///
 class _AddValuePageState extends State<AddValuePage> {
+  ///
   final DataRepository repository = DataRepository();
 
   @override
@@ -31,9 +41,7 @@ class _AddValuePageState extends State<AddValuePage> {
               Icons.close_rounded,
               size: 32,
             ),
-            onPressed: () {
-              Navigator.pop(context);
-            },
+            onPressed: () => Navigator.pop(context),
           ),
         ],
       ),
@@ -75,6 +83,7 @@ class _AddValuePageState extends State<AddValuePage> {
     );
   }
 
+  ///
   Widget _buildAddValueCards(
       BuildContext context, List<DocumentSnapshot>? snapshot) {
     return Column(
@@ -84,6 +93,7 @@ class _AddValuePageState extends State<AddValuePage> {
     );
   }
 
+  ///
   Widget _buildAddValueCard(BuildContext context, DocumentSnapshot snapshot) {
     final valueTemplate = ValueTemplate.fromSnapshot(snapshot);
     return GestureDetector(

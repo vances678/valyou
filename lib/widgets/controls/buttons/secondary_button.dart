@@ -1,7 +1,15 @@
+/* 
+
+Author: Vance Spears
+Date: 2022/12/13
+*/
+
 import 'package:flutter/material.dart';
 import 'package:valyou/data/defaults.dart';
 
+///
 class SecondaryButton extends StatelessWidget {
+  ///
   const SecondaryButton({
     super.key,
     required this.onPressed,
@@ -11,10 +19,19 @@ class SecondaryButton extends StatelessWidget {
     this.padding = Defaults.padding,
   });
 
+  ///
   final void Function()? onPressed;
+
+  ///
   final Widget child;
+
+  ///
   final double? width;
+
+  ///
   final double? height;
+
+  ///
   final EdgeInsets? padding;
 
   @override

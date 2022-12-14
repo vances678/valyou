@@ -1,10 +1,18 @@
+/* 
+
+Author: Vance Spears
+Date: 2022/12/13
+*/
+
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:valyou/data/defaults.dart';
 import 'package:valyou/widgets/cards/custom_card.dart';
 import 'package:valyou/widgets/charts/arc_chart.dart';
 
+///
 class ArcCard extends StatelessWidget {
+  ///
   const ArcCard({super.key});
 
   @override
