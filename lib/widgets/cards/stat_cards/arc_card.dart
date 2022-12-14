@@ -25,11 +25,11 @@ class ArcCard extends StatelessWidget {
               Row(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
-                  Icon(
+                  const Icon(
                     Icons.speed,
                     size: Defaults.increment * 3,
                   ),
-                  SizedBox(width: Defaults.increment / 2),
+                  const SizedBox(width: Defaults.increment / 2),
                   Text(
                     "72%",
                     style: GoogleFonts.poppins(

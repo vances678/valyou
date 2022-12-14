@@ -1,5 +1,3 @@
-// ignore_for_file: prefer_const_literals_to_create_immutables, prefer_const_constructors, no_logic_in_create_state
-
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
@@ -12,7 +10,6 @@ import 'package:valyou/widgets/cards/stat_cards/arc_card.dart';
 import 'package:valyou/widgets/cards/stat_cards/stat_card.dart';
 import 'package:valyou/widgets/cards/value_cards/dotted_border_card.dart';
 import 'package:valyou/widgets/cards/value_cards/value_card.dart';
-import 'package:valyou/widgets/controls/selectors/rating_selector.dart';
 
 class DashboardPage extends StatefulWidget {
   const DashboardPage({super.key});
@@ -33,8 +30,8 @@ class _DashboardPageState extends State<DashboardPage> {
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               Padding(
-                padding:
-                    EdgeInsets.symmetric(horizontal: Defaults.increment * 2),
+                padding: const EdgeInsets.symmetric(
+                    horizontal: Defaults.increment * 2),
                 child: Text(
                   "Dashboard",
                   style: GoogleFonts.poppins(
@@ -43,7 +40,7 @@ class _DashboardPageState extends State<DashboardPage> {
               ),
               IntrinsicHeight(
                 child: Row(
-                  children: [
+                  children: const [
                     Expanded(
                       child: ArcCard(),
                     ),
@@ -57,7 +54,7 @@ class _DashboardPageState extends State<DashboardPage> {
                 stream: repository.getValueStream(),
                 builder: (context, snapshot) {
                   if (!snapshot.hasData) {
-                    return LinearProgressIndicator();
+                    return const LinearProgressIndicator();
                   }
                   return _buildValueCards(
                     context,
@@ -72,11 +69,11 @@ class _DashboardPageState extends State<DashboardPage> {
                     return const AddValuePage();
                   },
                 ),
-                child: DottedBorderCard(
+                child: const DottedBorderCard(
                   text: "Add New Value",
                 ),
               ),
-              SizedBox(
+              const SizedBox(
                 height: Defaults.increment * 20,
               )
             ],

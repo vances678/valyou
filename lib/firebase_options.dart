@@ -66,7 +66,8 @@ class DefaultFirebaseOptions {
     messagingSenderId: '723822954010',
     projectId: 'valyou-25961',
     storageBucket: 'valyou-25961.appspot.com',
-    iosClientId: '723822954010-qgalo6qp04rmmk0avd6ka6oeqipjrv7i.apps.googleusercontent.com',
+    iosClientId:
+        '723822954010-qgalo6qp04rmmk0avd6ka6oeqipjrv7i.apps.googleusercontent.com',
     iosBundleId: 'com.example.valyou',
   );
 
@@ -76,7 +77,8 @@ class DefaultFirebaseOptions {
     messagingSenderId: '723822954010',
     projectId: 'valyou-25961',
     storageBucket: 'valyou-25961.appspot.com',
-    iosClientId: '723822954010-qgalo6qp04rmmk0avd6ka6oeqipjrv7i.apps.googleusercontent.com',
+    iosClientId:
+        '723822954010-qgalo6qp04rmmk0avd6ka6oeqipjrv7i.apps.googleusercontent.com',
     iosBundleId: 'com.example.valyou',
   );
 }

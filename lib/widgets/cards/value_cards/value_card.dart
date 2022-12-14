@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
-import '../../../data/defaults.dart';
-import '../custom_card.dart';
+import 'package:valyou/data/defaults.dart';
+import 'package:valyou/widgets/cards/custom_card.dart';
 
 class ValueCard extends StatelessWidget {
   const ValueCard({
@@ -30,7 +30,7 @@ class ValueCard extends StatelessWidget {
               size: Defaults.increment * 4,
             ),
           ),
-          SizedBox(width: Defaults.increment * 2),
+          const SizedBox(width: Defaults.increment * 2),
           Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
@@ -46,13 +46,13 @@ class ValueCard extends StatelessWidget {
                   ShaderMask(
                     shaderCallback: (Rect bounds) =>
                         LinearGradient(colors: colors).createShader(bounds),
-                    child: Icon(
+                    child: const Icon(
                       Icons.speed,
                       color: Colors.white,
                       size: Defaults.increment * 3,
                     ),
                   ),
-                  SizedBox(width: Defaults.increment / 2),
+                  const SizedBox(width: Defaults.increment / 2),
                   Text(
                     "89%",
                     style: GoogleFonts.poppins(
@@ -60,17 +60,17 @@ class ValueCard extends StatelessWidget {
                       fontWeight: FontWeight.w500,
                     ),
                   ),
-                  SizedBox(width: Defaults.increment * 2),
+                  const SizedBox(width: Defaults.increment * 2),
                   ShaderMask(
                     shaderCallback: (Rect bounds) =>
                         LinearGradient(colors: colors).createShader(bounds),
-                    child: Icon(
+                    child: const Icon(
                       Icons.electric_bolt,
                       color: Colors.white,
                       size: Defaults.increment * 3,
                     ),
                   ),
-                  SizedBox(width: Defaults.increment / 2),
+                  const SizedBox(width: Defaults.increment / 2),
                   Text(
                     "24 Day Streak!",
                     style: GoogleFonts.poppins(
@@ -82,8 +82,8 @@ class ValueCard extends StatelessWidget {
               )
             ],
           ),
-          Expanded(child: SizedBox(width: Defaults.increment * 2)),
-          Icon(
+          const Expanded(child: SizedBox(width: Defaults.increment * 2)),
+          const Icon(
             Icons.arrow_forward_ios_rounded,
             size: Defaults.increment * 3,
           ),

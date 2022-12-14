@@ -50,7 +50,7 @@ class _DetailsPageState extends State<DetailsPage> {
         ],
       ),
       body: Padding(
-        padding: EdgeInsets.only(top: Defaults.increment * 2),
+        padding: const EdgeInsets.only(top: Defaults.increment * 2),
         child: CustomCard(
           child: Column(
             mainAxisSize: MainAxisSize.min,
@@ -61,13 +61,13 @@ class _DetailsPageState extends State<DetailsPage> {
                     mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                     children: const [
                       Text("😁", style: TextStyle(fontSize: 32)),
-                      const SizedBox(height: 8),
+                      SizedBox(height: 8),
                       Text("🙂", style: TextStyle(fontSize: 32)),
-                      const SizedBox(height: 8),
+                      SizedBox(height: 8),
                       Text("😐", style: TextStyle(fontSize: 32)),
-                      const SizedBox(height: 8),
+                      SizedBox(height: 8),
                       Text("😕", style: TextStyle(fontSize: 32)),
-                      const SizedBox(height: 8),
+                      SizedBox(height: 8),
                       Text("😬", style: TextStyle(fontSize: 32)),
                       Text("", style: TextStyle(fontSize: 32)),
                     ],

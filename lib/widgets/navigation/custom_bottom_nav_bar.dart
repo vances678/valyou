@@ -1,9 +1,9 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:valyou/data/defaults.dart';
 import 'package:valyou/pages/checkin_page.dart';
 import 'package:valyou/widgets/controls/buttons/primary_button.dart';
-import '../../data/defaults.dart';
 
 class CustomBottomNavBar extends StatelessWidget {
   const CustomBottomNavBar({

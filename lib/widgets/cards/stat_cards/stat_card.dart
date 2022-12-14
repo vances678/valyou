@@ -35,11 +35,11 @@ class StatCard extends StatelessWidget {
               ),
               Row(
                 children: [
-                  Icon(
+                  const Icon(
                     Icons.electric_bolt,
                     size: Defaults.increment * 2,
                   ),
-                  SizedBox(width: Defaults.increment / 2),
+                  const SizedBox(width: Defaults.increment / 2),
                   Text(
                     "24 Days",
                     style: GoogleFonts.poppins(
@@ -69,11 +69,11 @@ class StatCard extends StatelessWidget {
               Row(
                 mainAxisAlignment: MainAxisAlignment.start,
                 children: [
-                  Icon(
+                  const Icon(
                     Icons.list_rounded,
                     size: Defaults.increment * 3,
                   ),
-                  SizedBox(width: Defaults.increment / 2),
+                  const SizedBox(width: Defaults.increment / 2),
                   Text(
                     "8 Actions",
                     style: GoogleFonts.poppins(

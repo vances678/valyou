@@ -1,5 +1,3 @@
-// ignore_for_file: prefer_const_constructors, prefer_const_literals_to_create_immutables
-
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
 import 'package:valyou/data/defaults.dart';
@@ -41,19 +39,19 @@ class _AddValuePageState extends State<AddValuePage> {
       ),
       body: SafeArea(
         child: SingleChildScrollView(
-          padding: EdgeInsets.only(top: Defaults.increment * 2),
+          padding: const EdgeInsets.only(top: Defaults.increment * 2),
           child: Column(
             children: [
               GestureDetector(
                 onTap: () => showModalBottomSheet(
                   isScrollControlled: true,
                   context: context,
-                  builder: (context) => AddValueSheet(),
+                  builder: (context) => const AddValueSheet(),
                   shape: RoundedRectangleBorder(
                     borderRadius: BorderRadius.circular(16),
                   ),
                 ),
-                child: DottedBorderCard(
+                child: const DottedBorderCard(
                   height: 64,
                   text: "Custom Value",
                 ),
@@ -62,7 +60,7 @@ class _AddValuePageState extends State<AddValuePage> {
                 stream: repository.getValueTemplateStream(),
                 builder: (context, snapshot) {
                   if (!snapshot.hasData) {
-                    return LinearProgressIndicator();
+                    return const LinearProgressIndicator();
                   }
                   return _buildAddValueCards(
                     context,

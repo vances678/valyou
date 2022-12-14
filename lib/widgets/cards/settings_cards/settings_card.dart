@@ -26,7 +26,7 @@ class _SettingsCardState extends State<SettingsCard> {
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
         Padding(
-          padding: EdgeInsets.only(left: Defaults.increment),
+          padding: const EdgeInsets.only(left: Defaults.increment),
           child: Text(
             widget.title,
             style: GoogleFonts.poppins(
@@ -55,7 +55,7 @@ class _SettingsCardState extends State<SettingsCard> {
                             setting.icon,
                             size: 32,
                           ),
-                          SizedBox(width: Defaults.increment * 2),
+                          const SizedBox(width: Defaults.increment * 2),
                           Column(
                             children: [
                               Text(
@@ -67,7 +67,7 @@ class _SettingsCardState extends State<SettingsCard> {
                               ),
                             ],
                           ),
-                          Expanded(
+                          const Expanded(
                             child: SizedBox(width: Defaults.increment),
                           ),
                           if (setting.options.isEmpty && setting.onTap != null)
@@ -96,9 +96,9 @@ class _SettingsCardState extends State<SettingsCard> {
                     (setting == widget.settings.last)
                         ? Container()
                         : Column(
-                            children: [
+                            children: const [
                               SizedBox(height: Defaults.increment),
-                              const Divider(thickness: 1),
+                              Divider(thickness: 1),
                               SizedBox(height: Defaults.increment),
                             ],
                           ),

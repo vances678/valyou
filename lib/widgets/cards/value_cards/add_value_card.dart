@@ -30,7 +30,7 @@ class AddValueCard extends StatelessWidget {
               size: 32,
             ),
           ),
-          SizedBox(width: Defaults.increment * 2),
+          const SizedBox(width: Defaults.increment * 2),
           Expanded(
             child: Text(
               title,
@@ -40,7 +40,7 @@ class AddValueCard extends StatelessWidget {
               ),
             ),
           ),
-          SizedBox(width: Defaults.increment * 2),
+          const SizedBox(width: Defaults.increment * 2),
           const Icon(
             Icons.add,
             size: 32,

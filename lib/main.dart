@@ -1,5 +1,3 @@
-// ignore_for_file: prefer_const_constructors, prefer_const_literals_to_create_immutables, avoid_function_literals_in_foreach_calls
-
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
 import 'package:valyou/themes/app_theme.dart';
@@ -21,11 +19,8 @@ void main() async {
   );
   await FirebaseFirestore.instance.collection("settings").get().then(
         (QuerySnapshot snapshot) => {
-          snapshot.docs.forEach(
-            (element) {
-              currentTheme.darkModeEnabled = element.get("enabled");
-            },
-          ),
+          for (var doc in snapshot.docs)
+            {currentTheme.darkModeEnabled = doc.get("enabled")}
         },
       );
   runApp(const App());
@@ -52,8 +47,8 @@ class _AppState extends State<App> {
 
     _selectedPageIndex = 0;
     _pages = [
-      DashboardTab(),
-      ProfileTab(),
+      const DashboardTab(),
+      const ProfileTab(),
     ];
 
     _pageController = PageController(initialPage: _selectedPageIndex);
@@ -80,7 +75,7 @@ class _AppState extends State<App> {
         ),
         body: PageView(
           controller: _pageController,
-          physics: NeverScrollableScrollPhysics(),
+          physics: const NeverScrollableScrollPhysics(),
           children: _pages,
         ),
       ),
