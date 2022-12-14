@@ -16,6 +16,7 @@ class _CheckinPageState extends State<CheckinPage> {
   double? pageProgress;
   PageController pageController = PageController();
   int? totalPageNum;
+  Map<String, int> ratings = {};
 
   @override
   Widget build(BuildContext context) {
@@ -27,6 +28,12 @@ class _CheckinPageState extends State<CheckinPage> {
         pageProgress = pageController.page ?? 0;
       });
     });
+
+    void onRatingChange(Map<String, int> newRatings) {
+      setState(() {
+        ratings = newRatings;
+      });
+    }
 
     return Scaffold(
       appBar: AppBar(
@@ -64,10 +71,21 @@ class _CheckinPageState extends State<CheckinPage> {
                         .toList()
                     : [];
                 totalPageNum = values.length;
-                return _buildPageView(
-                  context,
-                  values,
-                  pageController,
+
+                return PageView.builder(
+                  itemCount: values.length,
+                  pageSnapping: true,
+                  controller: pageController,
+                  itemBuilder: (context, index) {
+                    return CheckinSlide(
+                      pageController: pageController,
+                      value: values[index],
+                      isFirstSlide: (index == 0),
+                      isLastSlide: (index == values.length - 1),
+                      onRatingChange: onRatingChange,
+                      ratings: ratings,
+                    );
+                  },
                 );
               },
             ),
@@ -76,24 +94,4 @@ class _CheckinPageState extends State<CheckinPage> {
       ),
     );
   }
-}
-
-Widget _buildPageView(
-  BuildContext context,
-  List<Value> values,
-  PageController pageController,
-) {
-  return PageView.builder(
-    itemCount: values.length,
-    pageSnapping: true,
-    controller: pageController,
-    itemBuilder: (context, index) {
-      return CheckinSlide(
-        pageController: pageController,
-        value: values[index],
-        isFirstSlide: (index == 0),
-        isLastSlide: (index == values.length - 1),
-      );
-    },
-  );
 }

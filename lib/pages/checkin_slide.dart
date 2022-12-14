@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:valyou/data/defaults.dart';
+import 'package:valyou/data/repository/data_repository.dart';
 import 'package:valyou/data/value.dart';
 import 'package:valyou/widgets/controls/buttons/primary_button.dart';
 import 'package:valyou/widgets/controls/buttons/secondary_button.dart';
@@ -10,12 +11,16 @@ class CheckinSlide extends StatefulWidget {
   const CheckinSlide({
     super.key,
     required this.pageController,
+    required this.onRatingChange,
+    required this.ratings,
     required this.value,
     required this.isFirstSlide,
     required this.isLastSlide,
   });
 
   final PageController pageController;
+  final Function(Map<String, int>) onRatingChange;
+  final Map<String, int> ratings;
   final Value value;
   final bool isFirstSlide;
   final bool isLastSlide;
@@ -46,7 +51,13 @@ class _CheckinSlideState extends State<CheckinSlide>
           RatingSelector(
             maxRating: 5,
             onSelect: (rating) {
-              //print(rating);
+              if (widget.ratings.containsKey(widget.value.name)) {
+                widget.ratings
+                    .update(widget.value.referenceID!, (value) => rating);
+              } else {
+                widget.ratings.addAll({widget.value.referenceID!: rating});
+              }
+              widget.onRatingChange(widget.ratings);
             },
           ),
           const SizedBox(height: Defaults.increment * 2),
@@ -61,6 +72,14 @@ class _CheckinSlideState extends State<CheckinSlide>
                   }
                 : () {
                     Navigator.pop(context);
+                    final DataRepository repository = DataRepository();
+                    widget.ratings.forEach((id, rating) async {
+                      Value updatedValue = await repository.getValue(id);
+                      updatedValue.alignmentData.addAll(
+                        {DateTime.now(): rating},
+                      );
+                      repository.updateValue(id, updatedValue);
+                    });
                   },
             child: Text(
               (!widget.isLastSlide) ? "Continue" : "Finish",

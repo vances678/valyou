@@ -43,6 +43,7 @@ dependencies:
   webview_flutter: ^3.0.4
   fl_chart: ^0.55.2
   rainbow_color: ^2.0.1
+  app_settings: ^4.1.8
 
 dev_dependencies:
   flutter_test:

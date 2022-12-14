@@ -1,3 +1,4 @@
+import 'package:app_settings/app_settings.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:valyou/data/defaults.dart';
@@ -43,6 +44,7 @@ class _ProfilePageState extends State<ProfilePage> {
                     name: "Notifications",
                     icon: Icons.notifications,
                     options: {},
+                    onTap: () => AppSettings.openNotificationSettings(),
                   ),
                   Setting(
                     name: "Dark mode",

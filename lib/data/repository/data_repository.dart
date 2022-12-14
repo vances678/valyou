@@ -17,11 +17,14 @@ class DataRepository {
     return user.collection("values").add(value.toJson());
   }
 
-  void updateValue(Value value) async {
-    await user
-        .collection("values")
-        .doc(value.referenceID)
-        .update(value.toJson());
+  Future<Value> getValue(String referenceID) async {
+    return user.collection("values").doc(referenceID).get().then(
+          (DocumentSnapshot snapshot) => Value.fromSnapshot(snapshot),
+        );
+  }
+
+  void updateValue(String referenceID, Value value) async {
+    user.collection("values").doc(referenceID).update(value.toJson());
   }
 
   void deleteValue(Value value) async {

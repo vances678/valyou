@@ -81,14 +81,13 @@ class WavePainter extends CustomPainter {
         Colors.red[900]!,
         Colors.red,
         Colors.orange[700]!,
-        Colors.yellow[700]!,
-        Colors.limeAccent,
-        Colors.lightGreenAccent,
-        Colors.lightGreenAccent[700]!,
+        Colors.yellow[600]!,
+        Colors.limeAccent[700]!,
+        Colors.greenAccent[400]!,
       ],
     );
     Paint paint = Paint()
-      ..color = spectrum[waveWidthRatio]
+      ..color = spectrum[waveWidthRatio].withOpacity(0.75)
       ..strokeCap = StrokeCap.round;
 
     Path path = Path();

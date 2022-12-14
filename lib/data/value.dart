@@ -1,6 +1,7 @@
+import 'dart:convert';
+
 import 'package:flutter/material.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
-import 'package:valyou/data/alignment_data.dart';
 import 'package:valyou/data/defaults.dart';
 import 'package:valyou/data/value_template.dart';
 
@@ -8,14 +9,14 @@ class Value {
   final String name;
   final IconData icon;
   final List<Color> colors;
-  final List<AlignmentData>? alignmentData;
+  Map<DateTime, int> alignmentData;
   String? referenceID;
 
   Value({
     required this.name,
     required this.icon,
     required this.colors,
-    this.alignmentData,
+    this.alignmentData = const {},
     this.referenceID,
   });
 
@@ -36,7 +37,8 @@ class Value {
       name: json["name"] as String,
       icon: Defaults.icons[json["icon"]] ?? Icons.question_mark_rounded,
       colors: colors,
-      alignmentData: json["alignmentData"],
+      alignmentData: Map<String, int>.from(json["alignmentData"] ?? {})
+          .map((k, v) => MapEntry(DateTime.parse(k), v)),
     );
   }
 
@@ -52,7 +54,8 @@ class Value {
         orElse: (() => "question"),
       ),
       "colors": colorMap,
-      "alignmentData": alignmentData,
+      "alignmentData":
+          alignmentData.map((k, v) => MapEntry(k.toIso8601String(), v)),
     };
   }
 }
