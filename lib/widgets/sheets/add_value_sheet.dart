@@ -6,8 +6,8 @@ import 'package:valyou/data/defaults.dart';
 import 'package:valyou/data/repository/data_repository.dart';
 import 'package:valyou/data/value.dart';
 import 'package:valyou/data/value_template.dart';
-import 'package:valyou/widgets/buttons/primary_button.dart';
-import 'package:valyou/widgets/color_selector.dart';
+import 'package:valyou/widgets/controls/buttons/primary_button.dart';
+import 'package:valyou/widgets/controls/selectors/color_selector.dart';
 
 class AddValueSheet extends StatefulWidget {
   const AddValueSheet({super.key});

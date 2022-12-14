@@ -26,6 +26,18 @@ class _AddValuePageState extends State<AddValuePage> {
       appBar: AppBar(
         shadowColor: Defaults.colors.detail.withAlpha(50),
         elevation: 8,
+        automaticallyImplyLeading: false,
+        actions: [
+          IconButton(
+            icon: const Icon(
+              Icons.close_rounded,
+              size: 32,
+            ),
+            onPressed: () {
+              Navigator.pop(context);
+            },
+          ),
+        ],
       ),
       body: SafeArea(
         child: SingleChildScrollView(

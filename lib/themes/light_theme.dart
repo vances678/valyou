@@ -10,7 +10,17 @@ ThemeData lightTheme(BuildContext context) {
     canvasColor: Defaults.colors.backgroundLight, // tab bar
     cardColor: Defaults.colors.backgroundLight, // card
     dividerColor: Defaults.colors.placeholder, // divider & dotted border
-    dialogBackgroundColor: const Color(0xFF202030),
+    dialogBackgroundColor: Defaults.colors.backgroundLight,
+    outlinedButtonTheme: OutlinedButtonThemeData(
+      style: ButtonStyle(
+        overlayColor: MaterialStateProperty.resolveWith(
+          (states) => Defaults.colors.detail.withAlpha(20),
+        ),
+        foregroundColor: MaterialStateProperty.resolveWith(
+          (states) => Defaults.colors.detail,
+        ),
+      ),
+    ),
     bottomNavigationBarTheme: BottomNavigationBarThemeData(
       selectedItemColor: Defaults.colors.accentDark,
     ),

@@ -18,10 +18,23 @@ class AccountCard extends StatelessWidget {
               height: 64,
               child: Image.network(
                 "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcStUS9vUn2nITQn3-wLSaz6P6XPpfrJ2hOU4Q&usqp=CAU",
+                loadingBuilder: (context, child, loadingProgress) {
+                  if (loadingProgress == null) {
+                    return child;
+                  }
+                  return CircularProgressIndicator(
+                    color: Defaults.colors.accentDark,
+                    strokeWidth: Defaults.increment,
+                    value: loadingProgress.expectedTotalBytes != null
+                        ? loadingProgress.cumulativeBytesLoaded /
+                            loadingProgress.expectedTotalBytes!
+                        : null,
+                  );
+                },
               ),
             ),
           ),
-          SizedBox(width: Defaults.increment * 2),
+          const SizedBox(width: Defaults.increment * 2),
           Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [

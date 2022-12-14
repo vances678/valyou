@@ -2,7 +2,7 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:valyou/pages/checkin_page.dart';
-import 'package:valyou/widgets/buttons/primary_button.dart';
+import 'package:valyou/widgets/controls/buttons/primary_button.dart';
 import '../../data/defaults.dart';
 
 class CustomBottomNavBar extends StatelessWidget {
@@ -52,6 +52,7 @@ class CustomBottomNavBar extends StatelessWidget {
         Padding(
           padding: const EdgeInsets.only(top: 8),
           child: PrimaryButton(
+            padding: const EdgeInsets.all(Defaults.increment) * 3 / 2,
             onPressed: () => showCupertinoModalPopup(
               context: context,
               builder: (BuildContext context) {

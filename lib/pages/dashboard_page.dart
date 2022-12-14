@@ -12,6 +12,7 @@ import 'package:valyou/widgets/cards/stat_cards/arc_card.dart';
 import 'package:valyou/widgets/cards/stat_cards/stat_card.dart';
 import 'package:valyou/widgets/cards/value_cards/dotted_border_card.dart';
 import 'package:valyou/widgets/cards/value_cards/value_card.dart';
+import 'package:valyou/widgets/controls/selectors/rating_selector.dart';
 
 class DashboardPage extends StatefulWidget {
   const DashboardPage({super.key});

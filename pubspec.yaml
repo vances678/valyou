@@ -42,6 +42,7 @@ dependencies:
   cloud_firestore: ^4.1.0
   webview_flutter: ^3.0.4
   fl_chart: ^0.55.2
+  rainbow_color: ^2.0.1
 
 dev_dependencies:
   flutter_test:

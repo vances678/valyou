@@ -24,7 +24,8 @@ class _ColorSelectorState extends State<ColorSelector> {
         children: [
           for (var color in widget.colors)
             Padding(
-              padding: EdgeInsets.symmetric(horizontal: Defaults.increment / 4),
+              padding: const EdgeInsets.symmetric(
+                  horizontal: Defaults.increment / 4),
               child: GestureDetector(
                 onTap: () {
                   setState(() {

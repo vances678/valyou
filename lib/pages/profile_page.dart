@@ -19,7 +19,8 @@ class _ProfilePageState extends State<ProfilePage> {
     return SafeArea(
       child: SingleChildScrollView(
         child: Padding(
-          padding: EdgeInsets.symmetric(horizontal: Defaults.increment * 2),
+          padding:
+              const EdgeInsets.symmetric(horizontal: Defaults.increment * 2),
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
@@ -29,7 +30,7 @@ class _ProfilePageState extends State<ProfilePage> {
                     fontSize: 32, fontWeight: FontWeight.bold),
               ),
               const AccountCard(),
-              SizedBox(height: Defaults.increment * 2),
+              const SizedBox(height: Defaults.increment * 2),
               SettingsCard(
                 title: "SETTINGS",
                 settings: [
@@ -53,7 +54,7 @@ class _ProfilePageState extends State<ProfilePage> {
                   ),
                 ],
               ),
-              SizedBox(height: Defaults.increment * 2),
+              const SizedBox(height: Defaults.increment * 2),
               SettingsCard(
                 title: "ABOUT",
                 settings: [

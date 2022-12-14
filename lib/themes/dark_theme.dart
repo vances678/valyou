@@ -11,6 +11,16 @@ ThemeData darkTheme(BuildContext context) {
     cardColor: const Color(0xFF202030), // card
     dividerColor: Defaults.colors.placeholder, // divider & dotted border
     dialogBackgroundColor: const Color(0xFF202030),
+    outlinedButtonTheme: OutlinedButtonThemeData(
+      style: ButtonStyle(
+        overlayColor: MaterialStateProperty.resolveWith(
+          (states) => Defaults.colors.detail.withAlpha(20),
+        ),
+        foregroundColor: MaterialStateProperty.resolveWith(
+          (states) => Defaults.colors.placeholder,
+        ),
+      ),
+    ),
     bottomNavigationBarTheme: BottomNavigationBarThemeData(
       selectedItemColor: Defaults.colors.accent,
     ),
