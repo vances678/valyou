@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:rainbow_color/rainbow_color.dart';
+import 'package:valyou/data/defaults.dart';
 import 'package:valyou/widgets/cards/custom_card.dart';
 
 class RatingSelector extends StatefulWidget {
@@ -55,7 +56,9 @@ class _RatingSelectorState extends State<RatingSelector>
                         child: Text(
                           "$rating",
                           style: GoogleFonts.poppins(
-                              fontSize: 20, fontWeight: FontWeight.w600),
+                            fontSize: 20,
+                            fontWeight: FontWeight.w600,
+                          ),
                         ),
                       ),
                     ),
@@ -76,18 +79,8 @@ class WavePainter extends CustomPainter {
 
   @override
   void paint(Canvas canvas, Size size) {
-    var spectrum = Rainbow(
-      spectrum: [
-        Colors.red[900]!,
-        Colors.red,
-        Colors.orange[700]!,
-        Colors.yellow[600]!,
-        Colors.limeAccent[700]!,
-        Colors.greenAccent[400]!,
-      ],
-    );
     Paint paint = Paint()
-      ..color = spectrum[waveWidthRatio].withOpacity(0.75)
+      ..color = Defaults.spectrum[waveWidthRatio].withOpacity(0.75)
       ..strokeCap = StrokeCap.round;
 
     Path path = Path();

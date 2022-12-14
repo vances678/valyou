@@ -19,7 +19,7 @@ class WebViewPage extends StatelessWidget {
         title: Text(
           title,
           style: GoogleFonts.poppins(
-            fontSize: 18,
+            fontSize: 20,
             fontWeight: FontWeight.w600,
           ),
         ),

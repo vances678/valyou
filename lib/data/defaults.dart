@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:rainbow_color/rainbow_color.dart';
 
 class Defaults {
   static const double increment = 8;
@@ -16,6 +17,17 @@ class Defaults {
     offset: const Offset(0, increment),
     spreadRadius: increment / 4,
     color: colors.detailDark.withAlpha(20),
+  );
+
+  static Rainbow spectrum = Rainbow(
+    spectrum: [
+      Colors.red[900]!,
+      Colors.red,
+      Colors.orange[700]!,
+      Colors.yellow[600]!,
+      Colors.limeAccent[700]!,
+      Colors.greenAccent[400]!,
+    ],
   );
 
   static const Map<String, IconData> icons = {
